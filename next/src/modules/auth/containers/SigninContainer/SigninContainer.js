@@ -46,16 +46,17 @@ const handleSubmit = ({ register, login }) => variables =>
     .then(redirect)
     .catch(normalizeError)
 
+    
 const SigninContainer = ({ children }) => (
   <Mutation mutation={ loginMutation }>
     { login => (
       <Mutation mutation={ registerMutation }>
         { register => (
           <Form
-            children={ children }
-            onSubmit={ handleSubmit({ register, login }) }
+          children={ children }
+          onSubmit={ handleSubmit({ register, login }) }
           />
-        ) }
+          ) }
       </Mutation>
     ) }
   </Mutation>
